@@ -1,5 +1,6 @@
 //using CashFlow.BLL;
 using CashFlow.MODEL;
+using MyProject.BLL;
 
 namespace CashFlow.APP
 {

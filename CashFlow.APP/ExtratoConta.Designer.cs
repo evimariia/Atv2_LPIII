@@ -38,6 +38,7 @@ namespace MyProject.APP
             Valor = new ColumnHeader();
             Data = new ColumnHeader();
             button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -95,16 +96,26 @@ namespace MyProject.APP
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // Form3
+            // button2
+            // 
+            button2.Location = new Point(391, 362);
+            button2.Name = "button2";
+            button2.Size = new Size(140, 29);
+            button2.TabIndex = 5;
+            button2.Text = "Voltar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // ExtratoConta
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(555, 387);
+            ClientSize = new Size(555, 443);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(listView1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "Form3";
+            Name = "ExtratoConta";
             Text = "Form3";
             ResumeLayout(false);
             PerformLayout();
@@ -119,5 +130,6 @@ namespace MyProject.APP
         private ColumnHeader Valor;
         private ColumnHeader Data;
         private Button button1;
+        private Button button2;
     }
 }

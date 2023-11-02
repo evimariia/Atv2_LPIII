@@ -19,12 +19,23 @@ namespace MyProject.APP
         public ExtratoConta()
         {
             InitializeComponent();
-            //decimal receita = BLL.ReceitaRepository.getSoma();
-            //decimal despesa = BLL.DespesaRepository.getSoma();
-            //decimal saldoAtual = receita - despesa;
-            //saldoAtual.ToString();
+            decimal saldoAtual = 0;
 
-            //label2.Text = "Saldo atual: R$" + saldoAtual;
+            List<Extrato> extratos = ExtratoRepository.GetAll();
+
+            foreach (Extrato extrato in extratos)
+            {
+                if(extrato.Tipo == "D")
+                {
+                    saldoAtual -= extrato.Valor;
+                }
+                else if(extrato.Tipo == "R")
+                {
+                    saldoAtual += extrato.Valor;
+                }
+            }
+
+                label2.Text = "Saldo atual: R$" + saldoAtual;
         }
 
         private void PopularGrade()
@@ -33,7 +44,7 @@ namespace MyProject.APP
 
             foreach (Extrato extrato in extratos)
             {
-                string[] item = new string[3];
+                string[] item = new string[4];
 
                 Extrato e = ExtratoRepository.GetById(extrato.Id);
                 item[0] = e.IdCategoria.ToString();
@@ -41,6 +52,7 @@ namespace MyProject.APP
                 DateTime dataHora = (DateTime)e.Data;
                 string dataFormatada = dataHora.ToString("dd/MM/yyyy");
                 item[2] = dataFormatada;
+                item[3] = e.Tipo;
 
                 ListViewItem l = new ListViewItem(item);
 
