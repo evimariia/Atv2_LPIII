@@ -16,42 +16,42 @@ namespace CashFlow.APP
         }
 
 
-        /*private void btLogin_Click(object sender, EventArgs e)
+        private void btLogin_Click(object sender, EventArgs e)
         {
             string loginInput = loginTxt.Text;
             string senhaInput = senhaTxt.Text;
 
             try
             {
-                if (CashFlow.BLL.UsuarioRepository.AutenticaUsuario(loginInput, senhaInput))
+                if (MyProject.BLL.UsuarioRepository.AutenticaUsuario(loginInput, senhaInput))
                 {
                     this.Hide();
 
-                    Tipo formularioOpcoes = new Tipo(loginInput);
+                    Opcoes formularioOpcoes = new Opcoes(loginInput);
                     formularioOpcoes.ShowDialog();
                 }
                 else
                 {
-                    label3.Text = "Usu?rio n?o cadastrado";
+                    label3.Text = "Usuario nao cadastrado";
                     label3.Visible = true;
                 }
             }
             catch (Exception ex)
             {
-                label3.Text = "N?o foi poss?vel realizar o login: " + ex.Message;
+                label3.Text = "Nao foi possivel realizar o login: " + ex.Message;
                 label3.Visible = true;
                 senhaTxt.Text = "";
             }
 
 
-        }*/
+        }
 
-        /*private void btNovoUsuario_Click(object sender, EventArgs e)
+        private void btNovoUsuario_Click(object sender, EventArgs e)
         {
-            Form4 cadastro = new Form4();
+            NewUsuario cadastro = new NewUsuario();
             cadastro.ShowDialog();
             this.Close();
-        }*/
+        }
 
     }
 }

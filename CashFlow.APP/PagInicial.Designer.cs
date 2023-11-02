@@ -31,7 +31,6 @@ namespace CashFlow.APP
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PagInicial));
             loginTxt = new TextBox();
             senhaTxt = new TextBox();
             label1 = new Label();
@@ -90,7 +89,7 @@ namespace CashFlow.APP
             btLogin.Tag = "btLogin";
             btLogin.Text = "Login";
             btLogin.UseVisualStyleBackColor = false;
-            //btLogin.Click += btLogin_Click;
+            btLogin.Click += btLogin_Click;
             // 
             // button1
             // 
@@ -100,10 +99,11 @@ namespace CashFlow.APP
             button1.TabIndex = 6;
             button1.Text = "Novo usuário";
             button1.UseVisualStyleBackColor = true;
-            //button1.Click += btNovoUsuario_Click;
+            button1.Click += btNovoUsuario_Click;
             // 
             // label3
             // 
+            label3.AutoSize = true;
             label3.Font = new Font("Franklin Gothic Book", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(192, 0, 0);
             label3.Location = new Point(12, 351);
@@ -112,6 +112,7 @@ namespace CashFlow.APP
             label3.TabIndex = 7;
             label3.Text = "label3";
             label3.Visible = false;
+            label3.TextChanged += textBox2_TextChanged;
             // 
             // PagInicial
             // 

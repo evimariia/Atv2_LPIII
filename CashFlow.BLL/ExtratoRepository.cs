@@ -33,6 +33,26 @@ namespace MyProject.BLL
 
         }
 
+        public static decimal GetSoma(Extrato _extrato)
+        {
+            using (var dbContext = new CGerenciadordefinancasCashflowDalDatabaseDatabaseMdfContext())
+            {
+                decimal total = 0;
+                var e = dbContext.Extratos.Single(p => p.Id == _extrato.Id);
+
+                if(e.Tipo == "D")
+                {
+                    total -= e.Valor;
+                }
+                else if(e.Tipo == "R")
+                {
+                    total += e.Valor;
+                }
+
+                return total;
+            }
+        }
+
         public static void Update(Extrato _extrato)
         {
 
